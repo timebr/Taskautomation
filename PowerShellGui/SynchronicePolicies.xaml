@@ -5,14 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PowerShellGui"
         mc:Ignorable="d"
-        Height="600" Width="1080">
+        Height="auto" Width="auto">
     <Grid Background="#FF1E1E1E">
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="700" Height="500" Margin="50 50 0 0">
-            <TextBlock Text="Enter computernames:" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Segoe UI" Width="230" Height="40"/>
-            <TextBox VerticalAlignment="Bottom" Height="450" Margin="0 8 0 0" Background="#FF333333" Foreground="White" Cursor="ScrollNS" />
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Margin="50 50 0 0">
+            <TextBlock Text="Enter computernames:" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Segoe UI" Width="700" Height="50"/>
+            <TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="450" FontSize="14" Padding="5 0 0 0" Background="#FF333333" Foreground="White" Cursor="ScrollNS" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Right" Width="325">
-            <Button VerticalAlignment="Top" Margin="40 98 50 0" Background="#FF1EB08B" Content="Syncronise" Foreground="White"></Button>
+        <StackPanel HorizontalAlignment="Right" Width="250">
+            <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="#FF1EB08B" Content="Syncronise" Foreground="White" Height="50" Width="200" Margin="25 100 0 0"></Button>
         </StackPanel>
+        <Grid Margin="50 150 0 0" Height="300">
+            <DataGrid Grid.Row="1" Background="#FF333333" Margin="0 25 25 50" x:Name="DataGrid" Width="450" HorizontalAlignment="Left" AlternatingRowBackground="#FF1EB08B" AlternationCount="2">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn Header="Select" Binding="{Binding Selected}" Width="70">
+                    </DataGridCheckBoxColumn>
+                    <DataGridTextColumn Header="Node Name" Binding="{Binding NodeName}" Width="380">
+
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
     </Grid>
+    
+    
+    
 </UserControl>
