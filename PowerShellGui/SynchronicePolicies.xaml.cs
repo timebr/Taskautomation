@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace PowerShellGui
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SynchronicePolicies.xaml
     /// </summary>
-    public partial class SynchronisePolicies : Window
+    public partial class SynchronisePolicies : UserControl
     {
         public SynchronisePolicies()
         {
             InitializeComponent();
         }
-
     }
 }
