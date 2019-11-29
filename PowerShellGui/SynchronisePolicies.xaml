@@ -6,7 +6,29 @@
         xmlns:local="clr-namespace:PowerShellGui"
        
         mc:Ignorable="d" Height="600" Width="1080" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Foreground="White" ResizeMode="NoResize" WindowStyle="None">
-    
+    <Window.Resources>
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid Background="#FF1E1E1E">
         <Grid Cursor="AppStarting" Background="#FF333333" Height="50" VerticalAlignment="Top">
             <TextBlock Text="Synchronise Policies" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Foreground="#FF1EB08B" FontFamily="Open Sans" FontWeight="Bold" Width="230" Height="40"/>
@@ -57,7 +79,7 @@
                 <TextBox VerticalAlignment="Bottom" Height="400" Margin="0 8 0 0" Background="#FF333333" Foreground="White" Cursor="ScrollNS" />
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Width="200">
-                <Button></Button>                
+                <Button VerticalAlignment="Top" Margin="0 100 30 0"></Button>                
             </StackPanel>
         </Grid>
     </Grid>
