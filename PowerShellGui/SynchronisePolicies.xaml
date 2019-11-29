@@ -7,80 +7,22 @@
        
         mc:Ignorable="d" Height="600" Width="1080" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Foreground="White" ResizeMode="NoResize" WindowStyle="None">
     <Window.Resources>
-        <Storyboard x:Key="MenuOpen">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-        <Storyboard x:Key="MenuClose">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
+        <Storyboard x:Key="MenuOpen"/>
+        <Storyboard x:Key="MenuClose"/>
     </Window.Resources>
 
     <Window.Triggers>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
             <BeginStoryboard Storyboard="{StaticResource MenuOpen}"/>
         </EventTrigger>
-        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
-            <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
-        </EventTrigger>
     </Window.Triggers>
     <Grid Background="#FF1E1E1E">
-        <Grid Cursor="AppStarting" Background="#FF333333" Height="50" VerticalAlignment="Top">
-            <TextBlock Text="Synchronise Policies" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" Foreground="#FF1EB08B" FontFamily="Open Sans" FontWeight="Bold" Width="230" Height="40"/>
-            <materialDesign:PopupBox HorizontalAlignment="Right" Margin="10" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
-                <StackPanel Width="150">
-                    <Button Content="Settings" />
-                </StackPanel>
-            </materialDesign:PopupBox>
-        </Grid>
-        <Grid x:Name="GridMenu" Width="180" HorizontalAlignment="Left" Background="#FF252526">
-            <StackPanel>
-                <Grid Height="150" Background="#FF383838">
-                    <Button x:Name="ButtonCloseMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="ButtonCloseMenu_Click">
-                        <materialDesign:PackIcon Foreground="White" Kind="ArrowLeft" Width="30" Height="30"/>
-                    </Button>
-                </Grid>
-                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Black" SelectionChanged="ListView_SelectionChanged">
-                    <ListViewItem Height="60" Foreground="White">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ViewDashboard" VerticalAlignment="Center" Width="25" Height="25" Margin="10"/>
-                            <TextBlock Text="Home" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60" Foreground="White">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Update" VerticalAlignment="Center" Width="25" Height="25" Margin="10"/>
-                            <TextBlock Text="Sync Policies" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60" Foreground="White">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="DesktopWindows" VerticalAlignment="Center" Width="25" Height="25" Margin="10"/>
-                            <TextBlock Text="Management" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60" Foreground="White">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Folder" VerticalAlignment="Center" Width="25" Height="25" Margin="10"/>
-                            <TextBlock Text="File Transfer" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                </ListView>
-            </StackPanel>
-        </Grid>
-        <Grid Width="900" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="550">
-            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="600" Height="450" Margin="50 50 0 0">
-                <TextBlock Text="Enter computernames:" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Open Sans" Width="230" Height="40"/>
-                <TextBox VerticalAlignment="Bottom" Height="400" Margin="0 8 0 0" Background="#FF333333" Foreground="White" Cursor="ScrollNS" />
-            </StackPanel>
-            <StackPanel HorizontalAlignment="Right" Width="200">
-                <Button VerticalAlignment="Top" Margin="0 100 30 0" Background="Green"></Button>                
-            </StackPanel>
-        </Grid>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="700" Height="500" Margin="50 50 0 0">
+           <TextBlock Text="Enter computernames:" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Segoe UI" Width="230" Height="40"/>
+           <TextBox VerticalAlignment="Bottom" Height="450" Margin="0 8 0 0" Background="#FF333333" Foreground="White" Cursor="ScrollNS" />
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" Width="325">
+            <Button VerticalAlignment="Top" Margin="40 98 50 0" Background="#FF1EB08B" Content="Syncronise"></Button>
+        </StackPanel>        
     </Grid>
 </Window>
