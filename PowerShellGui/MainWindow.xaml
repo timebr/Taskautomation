@@ -37,6 +37,11 @@
                 </StackPanel>
             </materialDesign:PopupBox>
         </Grid>
+
+        <Grid Margin="60 55 0 0">
+            <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF252526">
             <StackPanel>
                 <Grid Height="150" Background="#FF383838">

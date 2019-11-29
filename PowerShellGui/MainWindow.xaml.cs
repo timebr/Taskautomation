@@ -44,7 +44,17 @@ namespace PowerShellGui
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            int index = ListviewMenu.SelectedIndex;
 
+            switch (index)
+            {
+                case 1:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new SynchronisePolicies());
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
