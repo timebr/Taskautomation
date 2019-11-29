@@ -21,9 +21,6 @@
                     <Button x:Name="ButtonCloseMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="ButtonCloseMenu_Click">
                         <materialDesign:PackIcon Foreground="White" Kind="ArrowLeft" Width="30" Height="30"/>
                     </Button>
-                    <Button Background="Blue">
-                        
-                    </Button>
                 </Grid>
                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Black">
                     <ListViewItem Height="60" Foreground="White">
