@@ -18,5 +18,12 @@ namespace PowerShellGui
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    
+    public partial class SynchronisePolicies : Window
+    {
+        public SynchronisePolicies()
+        {
+            InitializeComponent();
+        }
+
+    }
 }

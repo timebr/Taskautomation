@@ -42,7 +42,7 @@ namespace PowerShellGui
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
         }
 
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

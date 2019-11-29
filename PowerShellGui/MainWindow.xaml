@@ -47,7 +47,7 @@
                         <materialDesign:PackIcon Foreground="White" Kind="Menu" Width="25" Height="25"/>
                     </Button>
                 </Grid>
-                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="{x:Null}" SelectionChanged="ListView_SelectionChanged">
+                <ListView x:Name="ListviewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="{x:Null}" SelectionChanged="ListViewMenu_SelectionChanged">
                     <ListViewItem Height="60" Foreground="White">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ViewDashboard" VerticalAlignment="Center" Width="25" Height="25" Margin="10"/>
