@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PowerShellGui"
+       
         mc:Ignorable="d" Height="600" Width="1080" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Foreground="White" ResizeMode="NoResize" WindowStyle="None">
     
     <Grid Background="#FF1E1E1E">
@@ -22,7 +23,7 @@
                         <materialDesign:PackIcon Foreground="White" Kind="ArrowLeft" Width="30" Height="30"/>
                     </Button>
                 </Grid>
-                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Black">
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Black" SelectionChanged="ListView_SelectionChanged">
                     <ListViewItem Height="60" Foreground="White">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ViewDashboard" VerticalAlignment="Center" Width="25" Height="25" Margin="10"/>

@@ -35,5 +35,10 @@ namespace PowerShellGui
             
             
         }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
