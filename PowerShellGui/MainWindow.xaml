@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PowerShellGui"
-        mc:Ignorable="d" Height="600" Width="1080" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Foreground="White" ResizeMode="NoResize" WindowStyle="None">
+        mc:Ignorable="d" Height="600" Width="1080" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Foreground="White" WindowStyle="None">
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
