@@ -18,9 +18,9 @@ namespace PowerShellGui
     /// <summary>
     /// Interaction logic for SynchronicePolicies.xaml
     /// </summary>
-    public partial class SynchronisePolicies : UserControl
+    public partial class FileTransfer : UserControl
     {
-        public SynchronisePolicies()
+        public FileTransfer()
         {
             InitializeComponent();
         }
