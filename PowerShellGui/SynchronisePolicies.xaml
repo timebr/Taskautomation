@@ -7,11 +7,29 @@
         mc:Ignorable="d"
         Height="auto" Width="auto">
     <UserControl.Resources>
-        <Style x:Key="DataGridRowStyle1" TargetType="{x:Type DataGridColumnHeader}">
-            <Setter Property="Foreground" Value="#FFB3B3B3"/>
-            <Setter Property="Height" Value="25"/>
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-            <Setter Property="Template" Value="{DynamicResource DataGridRowControlTemplate1}"/>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="15 0 0 0"/>
+            <Setter Property="Height" Value="35"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF1EB08B"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="DataGridRowHeader">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="15 0 0 0"/>
+            <Setter Property="Height" Value="35"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF1EB08B"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </UserControl.Resources>
     <Grid Background="#FF1E1E1E">
@@ -25,8 +43,7 @@
         <Grid Margin="50 150 0 0" Height="300">
             <DataGrid x:Name="ComputerView" Width="450" HorizontalAlignment="Left" AutoGenerateColumns="False" Margin="0 30 0 50" Background="#FF333333" Foreground="White">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ComputerName" Width="180" Binding="{Binding ComputerName}">
-                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="ComputerName" Width="180" Binding="{Binding ComputerName}"/>
                     <DataGridTextColumn Header="Availability" Width="120" Binding="{Binding Availability}"/>
                 </DataGrid.Columns>
             </DataGrid>

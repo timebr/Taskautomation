@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,11 +32,17 @@ namespace PowerShellGui
             List<Computer> ComputerList = new List<Computer>();
             foreach (String ComputerName in NodeArray)
             {
-                Computer Computer = new Computer(ComputerName);
-                ComputerList.Add(Computer);
+                Process p = new Process();
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardOutput = true;
+                p.StartInfo.RedirectStandardError = true;
+                p.StartInfo.RedirectStandardInput = true;
+                p.StartInfo.FileName = @"C:\Program Files (x86)\LANDesk\LDClient\PolicySync.exe";
+                p.StartInfo.Arguments = @"\\200.200.20.200:5555 -u xyz -p abc123 -i -w D:\Selenium java -jar selenium-server-standalone.jar -role node -hub http://100.100.10.100:4444/grid/register";
+                p.Start();
             }
             ComputerView.ItemsSource = ComputerList;
-        }
 
+        }
     }
 }
