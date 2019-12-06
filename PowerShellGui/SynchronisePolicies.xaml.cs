@@ -34,6 +34,7 @@ namespace PowerShellGui
                 Computer Computer = new Computer(ComputerName);
                 ComputerList.Add(Computer);
             }
+            ComputerView.ItemsSource = ComputerList;
         }
 
         public IList<Computer> ComputerList { get; set; }

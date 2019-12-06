@@ -15,15 +15,22 @@
             <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="#FF1EB08B" Content="Syncronise" Foreground="White" Height="50" Width="200" Margin="25 100 0 0" Click="ButtonSynchronise_Click"></Button>
         </StackPanel>
         <Grid Margin="50 150 0 0" Height="300">
-            <DataGrid Grid.Row="1" Foreground="White" Background="#FF333333" Margin="0 25 25 50" x:Name="ComputerView" Width="450" HorizontalAlignment="Left" AlternatingRowBackground="#FF1EB08B" AlternationCount="2">
-                <DataGrid.Columns>
-                    <DataGridCheckBoxColumn Header="Select" Binding="{Binding Selected}" Width="70">
-                    </DataGridCheckBoxColumn>
-                    <DataGridTextColumn Header="Node Name" Binding="{Binding NodeName}" Width="380">
-
-                    </DataGridTextColumn>
-                </DataGrid.Columns>
-            </DataGrid>
+            <ListView x:Name="ComputerView" Width="300" HorizontalAlignment="Left" Margin="3 30 0 50" Foreground="White">
+                <ListView.View>
+                    <GridView>
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Height" Value="30"/>
+                                <Setter Property="BorderThickness" Value="3"/>
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
+                        <GridViewColumn Header="ComputerName" Width="180" DisplayMemberBinding="{Binding ComputerName}"/>
+                        <GridViewColumn Header="Availability" Width="120" DisplayMemberBinding="{Binding ComputerName}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </Grid>
     </Grid>
     
