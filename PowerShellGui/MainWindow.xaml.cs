@@ -56,6 +56,10 @@ namespace PowerShellGui
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new SynchronisePolicies());
                     break;
+                case 3:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new FileTransfer());
+                    break;
                 default:
                     break;
             }
