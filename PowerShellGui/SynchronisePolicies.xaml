@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:PowerShellGui"
         mc:Ignorable="d"
         Height="auto" Width="auto">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Foreground" Value="white"/>
+        </Style>
+    </UserControl.Resources>
     <Grid Background="#FF1E1E1E">
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Margin="50 50 0 0">
             <TextBlock Text="Enter computernames:" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Segoe UI" Width="700" Height="50"/>
@@ -15,22 +20,12 @@
             <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="#FF1EB08B" Content="Syncronise" Foreground="White" Height="50" Width="200" Margin="25 100 0 0" Click="ButtonSynchronise_Click"></Button>
         </StackPanel>
         <Grid Margin="50 150 0 0" Height="300">
-            <ListView x:Name="ComputerView" Width="300" HorizontalAlignment="Left" Margin="3 30 0 50" Foreground="White">
-                <ListView.View>
-                    <GridView>
-                        <GridView.ColumnHeaderContainerStyle>
-                            <Style TargetType="{x:Type GridViewColumnHeader}">
-                                <Setter Property="Foreground" Value="White"/>
-                                <Setter Property="Background" Value="Transparent"/>
-                                <Setter Property="Height" Value="30"/>
-                                <Setter Property="BorderThickness" Value="3"/>
-                            </Style>
-                        </GridView.ColumnHeaderContainerStyle>
-                        <GridViewColumn Header="ComputerName" Width="180" DisplayMemberBinding="{Binding ComputerName}"/>
-                        <GridViewColumn Header="Availability" Width="120" DisplayMemberBinding="{Binding ComputerName}"/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
+            <DataGrid x:Name="ComputerView" Width="450" HorizontalAlignment="Left" AutoGenerateColumns="False" Margin="0 30 0 50" Background="#FF333333">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ComputerName" Width="180" Binding="{Binding ComputerName}"/>
+                    <DataGridTextColumn Header="Availability" Width="120" Binding="{Binding Availability}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
     </Grid>
     

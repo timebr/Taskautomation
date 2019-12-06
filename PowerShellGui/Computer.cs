@@ -9,14 +9,13 @@ namespace PowerShellGui
 {
     public class Computer
     {
-        string ComputerName;
-        bool Availability;
-        string User;
+        public string ComputerName { get; set; }
+        public bool Availability { get; set; }
 
         public Computer(String Node)
         {
             SetComputerName(Node);
-            Availability = PingHost(Node);
+            Availability = PingHost(ComputerName);
         }
 
         public void SetComputerName(String name)

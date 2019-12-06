@@ -28,7 +28,7 @@ namespace PowerShellGui
         private void ButtonSynchronise_Click(object sender, RoutedEventArgs e)
         {
             string[] NodeArray = ComputerName.Text.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
-            ComputerList = new List<Computer>();
+            List<Computer> ComputerList = new List<Computer>();
             foreach (String ComputerName in NodeArray)
             {
                 Computer Computer = new Computer(ComputerName);
@@ -37,6 +37,5 @@ namespace PowerShellGui
             ComputerView.ItemsSource = ComputerList;
         }
 
-        public IList<Computer> ComputerList { get; set; }
     }
 }
