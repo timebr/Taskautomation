@@ -24,5 +24,18 @@ namespace PowerShellGui
         {
             InitializeComponent();
         }
+
+        private void ButtonSynchronise_Click(object sender, RoutedEventArgs e)
+        {
+            string[] NodeArray = ComputerName.Text.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+            ComputerList = new List<Computer>();
+            foreach (String ComputerName in NodeArray)
+            {
+                Computer Computer = new Computer(ComputerName);
+                ComputerList.Add(Computer);
+            }
+        }
+
+        public IList<Computer> ComputerList { get; set; }
     }
 }

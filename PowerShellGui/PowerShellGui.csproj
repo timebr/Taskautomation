@@ -61,9 +61,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="SynchronicePolicies.xaml">
-      <SubType>Designer</SubType>
+    <Compile Include="Computer.cs" />
+    <Compile Include="SynchronisePolicies.xaml.cs">
+      <DependentUpon>SynchronisePolicies.xaml</DependentUpon>
+    </Compile>
+    <Page Include="FileTransfer.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -73,13 +77,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="SynchronicePolicies.xaml.cs">
-      <DependentUpon>SynchronicePolicies.xaml</DependentUpon>
+    <Compile Include="FileTransfer.xaml.cs">
+      <DependentUpon>FileTransfer.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SynchronisePolicies.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

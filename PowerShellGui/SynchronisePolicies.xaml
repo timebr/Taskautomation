@@ -9,13 +9,13 @@
     <Grid Background="#FF1E1E1E">
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Margin="50 50 0 0">
             <TextBlock Text="Enter computernames:" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="18" Foreground="White" FontFamily="Segoe UI" Width="700" Height="50"/>
-            <TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="450" FontSize="14" Padding="5 0 0 0" Background="#FF333333" Foreground="White" Cursor="ScrollNS" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="ComputerName" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="450" FontSize="14" Padding="5 0 0 0" Background="#FF333333" Foreground="White" Cursor="ScrollNS" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Right" Width="250">
-            <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="#FF1EB08B" Content="Syncronise" Foreground="White" Height="50" Width="200" Margin="25 100 0 0"></Button>
+            <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="#FF1EB08B" Content="Syncronise" Foreground="White" Height="50" Width="200" Margin="25 100 0 0" Click="ButtonSynchronise_Click"></Button>
         </StackPanel>
         <Grid Margin="50 150 0 0" Height="300">
-            <DataGrid Grid.Row="1" Foreground="White" Background="#FF333333" Margin="0 25 25 50" x:Name="DataGrid" Width="450" HorizontalAlignment="Left" AlternatingRowBackground="#FF1EB08B" AlternationCount="2">
+            <DataGrid Grid.Row="1" Foreground="White" Background="#FF333333" Margin="0 25 25 50" x:Name="ComputerView" Width="450" HorizontalAlignment="Left" AlternatingRowBackground="#FF1EB08B" AlternationCount="2">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn Header="Select" Binding="{Binding Selected}" Width="70">
                     </DataGridCheckBoxColumn>
