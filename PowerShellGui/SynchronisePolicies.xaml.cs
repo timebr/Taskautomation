@@ -30,16 +30,12 @@ namespace PowerShellGui
         {
             string[] NodeArray = ComputerName.Text.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
             List<Computer> ComputerList = new List<Computer>();
+            //string policySyncPath = @"C:\Program Files (x86)\LANDesk\LDClient\PolicySync.exe";
             foreach (String ComputerName in NodeArray)
             {
-                Process p = new Process();
-                p.StartInfo.UseShellExecute = false;
-                p.StartInfo.RedirectStandardOutput = true;
-                p.StartInfo.RedirectStandardError = true;
-                p.StartInfo.RedirectStandardInput = true;
-                p.StartInfo.FileName = @"C:\Program Files (x86)\LANDesk\LDClient\PolicySync.exe";
-                p.StartInfo.Arguments = @"\\200.200.20.200:5555 -u xyz -p abc123 -i -w D:\Selenium java -jar selenium-server-standalone.jar -role node -hub http://100.100.10.100:4444/grid/register";
-                p.Start();
+                ProcessStartInfo info = new ProcessStartInfo(@"C:\Windows\Buhler\SwInfo\PsExec.exe", @"-accepteula -d -i \\hw-wop-119100 cmd /c notepad.exe");
+                info.UseShellExecute = false;
+                Process p = Process.Start(info);
             }
             ComputerView.ItemsSource = ComputerList;
 
