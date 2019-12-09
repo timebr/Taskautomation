@@ -39,12 +39,16 @@ namespace PowerShellGui
             foreach (Computer Computer in ComputerList)
             {
                 string NodeName = Computer.GetComputerName();
-                ProcessStartInfo info = new ProcessStartInfo(@"C:\Windows\Buhler\SwInfo\PsExec.exe", @"-accepteula -d -i -w \\" + NodeName + @" cmd /c 'C:\Program Files (x86)\LANDesk\LDClient\PolicySync.exe'");
-                info.UseShellExecute = false;
-                Process p = Process.Start(info);
+                bool Availability = Computer.GetAvailability();
+                if (Availability)
+                {
+                    ProcessStartInfo info = new ProcessStartInfo(@"C:\Windows\Buhler\SwInfo\PsExec.exe", @"-accepteula \\" + NodeName + " cmd /c \"C:\\\\Program Files (x86)\\LANDesk\\LDClient\\PolicySync.exe\"");
+                    info.UseShellExecute = false;
+                    info.CreateNoWindow = true;
+                    Process p = Process.Start(info);
+                }
             }
             ComputerView.ItemsSource = ComputerList;
-
         }
     }
 }
