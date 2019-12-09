@@ -30,10 +30,16 @@ namespace PowerShellGui
         {
             string[] NodeArray = ComputerName.Text.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
             List<Computer> ComputerList = new List<Computer>();
-            //string policySyncPath = @"C:\Program Files (x86)\LANDesk\LDClient\PolicySync.exe";
-            foreach (String ComputerName in NodeArray)
+            foreach (string NodeName in NodeArray)
             {
-                ProcessStartInfo info = new ProcessStartInfo(@"C:\Windows\Buhler\SwInfo\PsExec.exe", @"-accepteula -d -i \\hw-wop-119100 cmd /c notepad.exe");
+                Computer Node = new Computer(NodeName);
+                ComputerList.Add(Node);
+            }
+            //string policySyncPath = @"C:\Program Files (x86)\LANDesk\LDClient\PolicySync.exe";
+            foreach (Computer Computer in ComputerList)
+            {
+                string NodeName = Computer.GetComputerName();
+                ProcessStartInfo info = new ProcessStartInfo(@"C:\Windows\Buhler\SwInfo\PsExec.exe", @"-accepteula -d -i \\" + NodeName + " /c notepad.exe");
                 info.UseShellExecute = false;
                 Process p = Process.Start(info);
             }
