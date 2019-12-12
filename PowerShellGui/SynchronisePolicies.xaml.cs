@@ -28,14 +28,25 @@ namespace PowerShellGui
 
         private void ButtonSynchronise_Click(object sender, RoutedEventArgs e)
         {
-            string[] NodeArray = ComputerName.Text.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+            string[] tempNodeArray = ComputerName.Text.Split(Environment.NewLine.ToCharArray()).ToArray();
             List<Computer> ComputerList = new List<Computer>();
+            string[] NodeArray = new string[] { };
+            foreach (string NodeName in tempNodeArray)
+            {
+                string[] tempArray2 = NodeName.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+                string[] tempArray1 = NodeArray;
+                NodeArray = new string[tempArray2.Length + tempArray1.Length];
+                tempArray1.CopyTo(NodeArray, 0);
+                tempArray2.CopyTo(NodeArray, tempArray1.Length);
+                
+            }
             foreach (string NodeName in NodeArray)
             {
                 Computer Node = new Computer(NodeName);
                 ComputerList.Add(Node);
             }
-            //string policySyncPath = @"C:\Program Files (x86)\LANDesk\LDClient\PolicySync.exe";
+            
+            //Sync Policies of each available Computer
             foreach (Computer Computer in ComputerList)
             {
                 string NodeName = Computer.GetComputerName();
