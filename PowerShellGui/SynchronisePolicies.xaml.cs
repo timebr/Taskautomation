@@ -42,7 +42,7 @@ namespace PowerShellGui
                 bool Availability = Computer.GetAvailability();
                 if (Availability)
                 {
-                    ProcessStartInfo info = new ProcessStartInfo(@"C:\Windows\Buhler\SwInfo\PsExec.exe", @"-accepteula \\" + NodeName + " cmd /c \"C:\\\\Program Files (x86)\\LANDesk\\LDClient\\PolicySync.exe\"");
+                    ProcessStartInfo info = new ProcessStartInfo(@"C:\Windows\Buhler\SwInfo\PsExec.exe", @"-accepteula \\" + NodeName + " -s cmd /c \"C:\\\\Program Files (x86)\\LANDesk\\LDClient\\PolicySync.exe\"");
                     info.UseShellExecute = false;
                     info.CreateNoWindow = true;
                     Process p = Process.Start(info);
