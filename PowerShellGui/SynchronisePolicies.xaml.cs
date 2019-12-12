@@ -38,7 +38,6 @@ namespace PowerShellGui
                 NodeArray = new string[tempArray2.Length + tempArray1.Length];
                 tempArray1.CopyTo(NodeArray, 0);
                 tempArray2.CopyTo(NodeArray, tempArray1.Length);
-                
             }
             foreach (string NodeName in NodeArray)
             {
