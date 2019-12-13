@@ -79,8 +79,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Computer.cs" />
+    <Compile Include="PsExec.cs" />
     <Compile Include="RegistryExport.xaml.cs">
       <DependentUpon>RegistryExport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sandbox.xaml.cs">
+      <DependentUpon>Sandbox.xaml</DependentUpon>
     </Compile>
     <Compile Include="SynchronisePolicies.xaml.cs">
       <DependentUpon>SynchronisePolicies.xaml</DependentUpon>
@@ -105,6 +109,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RegistryExport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sandbox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

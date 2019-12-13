@@ -77,6 +77,12 @@
                             <TextBlock Text="File Transfer" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
+                    <ListViewItem Height="60" Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Box" VerticalAlignment="Center" Width="25" Height="25" Margin="10"/>
+                            <TextBlock Text="Sandbox" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
                 </ListView>
             </StackPanel>
         </Grid>
