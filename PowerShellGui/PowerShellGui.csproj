@@ -79,6 +79,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Computer.cs" />
+    <Compile Include="PsExec.cs" />
     <Compile Include="RegistryExport.xaml.cs">
       <DependentUpon>RegistryExport.xaml</DependentUpon>
     </Compile>

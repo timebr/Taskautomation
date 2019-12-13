@@ -52,10 +52,8 @@ namespace PowerShellGui
                 bool Availability = Computer.GetAvailability();
                 if (Availability)
                 {
-                    ProcessStartInfo info = new ProcessStartInfo(@"C:\Windows\Buhler\SwInfo\PsExec.exe", @"-accepteula \\" + NodeName + " -s cmd /c \"C:\\\\Program Files (x86)\\LANDesk\\LDClient\\PolicySync.exe\"");
-                    info.UseShellExecute = false;
-                    info.CreateNoWindow = true;
-                    Process p = Process.Start(info);
+                    string Command = @"-accepteula \\" + NodeName + " -s cmd /c \"C:\\\\Program Files (x86)\\LANDesk\\LDClient\\PolicySync.exe\"";
+                    PsExec Sync = new PsExec(Command);
                 }
             }
             ComputerView.ItemsSource = ComputerList;
