@@ -7,10 +7,12 @@ namespace PowerShellGui
         Process PsProcess = new Process();
         string PsExecPath = @"C:\Windows\Buhler\SwInfo\PsExec.exe";
         string command;
+        bool waitForFinish;
 
-        public PsExec(string command)
+        public PsExec(string command, bool waitForFinish)
         {
             this.command = command;
+            this.waitForFinish = waitForFinish;
             StartPsProcess();
         }
 
@@ -24,9 +26,13 @@ namespace PowerShellGui
             p.StartInfo.FileName = PsExecPath;
             p.StartInfo.Arguments = command;
             p.Start();
-            //p.WaitForExit();
-            //int ExitCode = p.ExitCode;
-            //return ExitCode;
+            if (waitForFinish)
+            {
+                p.WaitForExit();
+                //int ExitCode = p.ExitCode;
+                //return ExitCode;
+            }
+
         }
     }
 }

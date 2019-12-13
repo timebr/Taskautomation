@@ -31,7 +31,13 @@
                     <extToolkit:WatermarkTextBox x:Name="Search" Watermark="Search Term" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="0" Height="40" Width="350" FontSize="14" Padding="5 0 0 0" Background="#FF333333" Foreground="White" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
                     <Button Background="#FF1EB08B" Content="Search" Foreground="White" HorizontalAlignment="Right" Height="40" Width="125" Click="ButtonSearch_Click"></Button>
                 </Grid>
-                <RichTextBox Height="300" Margin="0 10 0 0" Background="#FF333333"/>
+                <RichTextBox  x:Name="RegistryExportTextBox" Height="300" Margin="0 10 0 0" Background="#FF333333" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+                    <RichTextBox.Resources>
+                        <Style TargetType="{x:Type Paragraph}">
+                            <Setter Property="Margin" Value="0"/>
+                        </Style>
+                    </RichTextBox.Resources>
+                </RichTextBox>
             </StackPanel>
         </Grid>
     </Grid>

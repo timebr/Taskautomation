@@ -53,7 +53,7 @@ namespace PowerShellGui
                 if (Availability)
                 {
                     string Command = @"-accepteula \\" + NodeName + " -s cmd /c \"C:\\\\Program Files (x86)\\LANDesk\\LDClient\\PolicySync.exe\"";
-                    PsExec Sync = new PsExec(Command);
+                    PsExec Sync = new PsExec(Command, false);
                 }
             }
             ComputerView.ItemsSource = ComputerList;
