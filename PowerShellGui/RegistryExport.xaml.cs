@@ -39,5 +39,10 @@ namespace PowerShellGui
         {
 
         }
+
+        private void ButtonDeleteFile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
