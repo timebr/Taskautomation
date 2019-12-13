@@ -66,6 +66,12 @@ namespace PowerShellGui
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new FileTransfer());
                     break;
+
+                case 4:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new Sandbox());
+                    break;
+
                 default:
                     break;
             }

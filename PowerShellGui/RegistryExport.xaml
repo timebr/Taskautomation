@@ -5,14 +5,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PowerShellGui"
              xmlns:extToolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
         Height="auto" Width="auto">
     <Grid Background="#FF1E1E1E">
         <Grid Margin="50 50 50 50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" Height="350">
             <StackPanel>
                 <extToolkit:WatermarkTextBox x:Name="TargetPC" Watermark="Target PC" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="0" Height="40" Width="150" FontSize="14" Padding="5 0 0 0" Background="#FF333333" Foreground="White" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
-                <ComboBox x:Name="RegistryKey" IsEditable="True" IsReadOnly="True" VerticalContentAlignment="Center" FontSize="14" Padding="5 0 0 0" Text="Registry Key" VerticalAlignment="Top" Background="#FF333333" Height="40" Foreground="White" Margin="0 10 0 0"/>
-                <ComboBox x:Name="SavePath" IsEditable="True" IsReadOnly="True" VerticalContentAlignment="Center" FontSize="14" Padding="5 0 0 0" Text="Save Path" VerticalAlignment="Top" Background="#FF333333" Height="40" Foreground="White" Margin="0 10 0 0"/>
+                <ComboBox x:Name="RegistryKey" IsEditable="True" IsReadOnly="False" VerticalContentAlignment="Center" FontSize="14" Padding="5 0 0 0" Text="Registry Key" VerticalAlignment="Top" Background="#FF333333" Height="40" Foreground="White" Margin="0 10 0 0">
+                    <ComboBoxItem Content="Uninstall x32"/>
+                    <ComboBoxItem Content="Uninstall x64"/>
+                    <ComboBoxItem Content="Uninstall"/>
+                </ComboBox>
+                <ComboBox x:Name="SavePath" IsEditable="True" IsReadOnly="True" VerticalContentAlignment="Center" FontSize="14" Padding="5 0 0 0" Text="Save Path" VerticalAlignment="Top" Background="#FF333333" Height="40" Foreground="White" Margin="0 10 0 0">
+                    <ComboBoxItem Content="Temp"/>
+                </ComboBox>
                 <Button Background="#FF1EB08B" Content="Export" Margin="0 10 0 0" Foreground="White" Height="40" Width="150" Click="ButtonExport_Click"></Button>
                 <Button Background="#FF1EB08B" Content="Open in Editor" Margin="0 120 0 0" Foreground="White" Height="40" Width="150" Click="ButtonOpenEditor_Click"></Button>
             </StackPanel>
@@ -21,7 +28,7 @@
             <StackPanel>
                 <Grid>
                     <extToolkit:WatermarkTextBox x:Name="Search" Watermark="Search Term" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="0" Height="40" Width="350" FontSize="14" Padding="5 0 0 0" Background="#FF333333" Foreground="White" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
-                    <Button Background="#FF1EB08B" Content="Export" Foreground="White" HorizontalAlignment="Right" Height="40" Width="125" Click="ButtonExport_Click"></Button>
+                    <Button Background="#FF1EB08B" Content="Search" Foreground="White" HorizontalAlignment="Right" Height="40" Width="125" Click="ButtonSearch_Click"></Button>
                 </Grid>
                 <RichTextBox Height="300" Margin="0 10 0 0" Background="#FF333333"/>
             </StackPanel>

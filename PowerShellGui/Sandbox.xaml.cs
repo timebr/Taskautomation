@@ -16,28 +16,18 @@ using System.Windows.Shapes;
 namespace PowerShellGui
 {
     /// <summary>
-    /// Interaction logic for RegistryExport.xaml
+    /// Interaction logic for Sandbox.xaml
     /// </summary>
-    public partial class RegistryExport : UserControl
+    public partial class Sandbox : UserControl
     {
-        public RegistryExport()
+        public Sandbox()
         {
             InitializeComponent();
         }
 
-        private void ButtonOpenEditor_Click(object sender, RoutedEventArgs e)
+        private void TwitterButton_OnClick(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void ButtonExport_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonSearch_Click(object sender, RoutedEventArgs e)
-        {
-
+            
         }
     }
 }
