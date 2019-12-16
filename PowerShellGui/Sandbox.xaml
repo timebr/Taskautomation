@@ -7,8 +7,14 @@
              xmlns:local="clr-namespace:PowerShellGui"
              mc:Ignorable="d"
              d:DesignHeight="300" Width="300">
-    <Grid Background="White">
-        
+    <Grid Background="Gray">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="addressTextBox" Width="200" />
+                <Button Click="goNavigateButton_Click">Go</Button>
+            </StackPanel>
+            <WebBrowser x:Name="myWebBrowser"/>
+        </StackPanel>
     </Grid>
 
 </UserControl>

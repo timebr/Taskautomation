@@ -22,16 +22,33 @@ namespace PowerShellGui
     /// </summary>
     public partial class FileTransfer : UserControl
     {
-        private object fileList;
 
         public FileTransfer()
         {
             InitializeComponent();
         }
 
-        private void TextBox_Drop(object sender, DragEventArgs e)
+        private void SwitchComputerButton_Click(object sender, RoutedEventArgs e)
         {
+            //Get current values
+            string textRoot = RootPC.Text;
+            string textDestination = DestinationPC.Text;
+            string textRootPath = RootPath.Text;
+            string textDestinationPath = DestinationPath.Text;
 
+            RootPC.Text = textDestination;
+            DestinationPC.Text = textRoot;
+            RootPath.Text = textDestinationPath;
+            DestinationPath.Text = textRootPath;
+        
+        }
+
+        private void Clear_all_Button_Click(object sender, RoutedEventArgs e)
+        {
+            RootPC.Clear();
+            DestinationPC.Clear();
+            DestinationPath.Text= "";
+            RootPath.Text = "";
         }
     }
 }

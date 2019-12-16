@@ -9,26 +9,30 @@
         Height="auto" Width="auto">
     <Grid Background="#FF1E1E1E">
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Margin="50 50 50 0">
-            <extToolkit:WatermarkTextBox x:Name="TargetPC" Watermark="Target PC" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="0" Height="40" Width="300" FontSize="14" Padding="5 0 0 0" Background="#FF333333" Foreground="White" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
-            <Button x:Name="SwitchComputerButton" Margin="350 0 350 0" Height="40" Background="#FF1EB08B" BorderBrush="{x:Null}">
+            <extToolkit:WatermarkTextBox x:Name="RootPC" Watermark="Root PC" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="0" Height="40" Width="300" FontSize="14" Padding="10 0 0 0" Background="#FF333333" Foreground="White" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+            <Button x:Name="SwitchComputerButton" Margin="350 0 350 0" Height="40" Background="#FF1EB08B" BorderBrush="{x:Null}" Click="SwitchComputerButton_Click">
                 <materialDesign:PackIcon Foreground="White" Kind="ArrowLeft" Width="20" Height="20"/>
             </Button>
-            <extToolkit:WatermarkTextBox x:Name="DestinationPC" Watermark="Destination PC" VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="0" Height="40" Width="300" FontSize="14" Padding="5 0 0 0" Background="#FF333333" Foreground="White" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+            <extToolkit:WatermarkTextBox x:Name="DestinationPC" Watermark="Destination PC" VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="0" Height="40" Width="300" FontSize="14" Padding="10 0 0 0" Background="#FF333333" Foreground="White" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
         </Grid>
         <Grid Margin="50 110 50 50" Height="300">
             <StackPanel HorizontalAlignment="Left" Width="300">
-                <ComboBox VerticalAlignment="Top" Background="#FF333333" Height="40" Foreground="White"/>
-                <TextBox Margin="0 20 0 0" Height="250" Background="#FF333333" AllowDrop="True" Drop="TextBox_Drop"/>
+                <ComboBox x:Name ="RootPath" VerticalAlignment="Top" Background="#FF333333" Height="40" Foreground="White" IsEditable="True" IsReadOnly="False" VerticalContentAlignment="Center" FontSize="14" Padding="10 0 0 0">
+                    <ComboBoxItem Content="C:\temp" />
+                </ComboBox>
+                <Grid Margin="0 20 0 0" Height="250" Background="#FF333333"></Grid>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Width="100">
                 <Button VerticalAlignment="Bottom" Height="30" Background="#FF1EB08B" Foreground="White" Margin="0 220 0 0">
                     <materialDesign:PackIcon Kind="Clear" Width="20" Height="20"/>
                 </Button>
-                <Button VerticalAlignment="Bottom" Height="30" Background="#FF1EB08B" Foreground="White" Margin="0 20 0 0" Content="Clear all"/>
+                <Button x:Name="Clear_all_Button" VerticalAlignment="Bottom" Height="30" Background="#FF1EB08B" Foreground="White" Margin="0 20 0 0" Content="Clear all" Click="Clear_all_Button_Click"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Width="300">
-                <ComboBox VerticalAlignment="Top" Background="#FF333333" Height="40"/>
-                <TextBox Margin="0 20 0 0" Height="250" Background="#FF333333"/>
+                <ComboBox x:Name="DestinationPath" VerticalAlignment="Top" Background="#FF333333" Height="40" Foreground="White" IsEditable="True" IsReadOnly="False" VerticalContentAlignment="Center" FontSize="14" Padding="10 0 0 0">
+                    <ComboBoxItem Content="C:\temp"/>
+                </ComboBox>
+                <Grid Margin="0 20 0 0" Height="250" Background="#FF333333"></Grid>
             </StackPanel>
         </Grid>
             
