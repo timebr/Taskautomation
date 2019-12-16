@@ -28,7 +28,7 @@
         <Grid Margin="250 50 50 50" VerticalAlignment="Top" HorizontalAlignment="Right" Width="500" Height="350">
             <StackPanel>
                 <Grid>
-                    <extToolkit:WatermarkTextBox x:Name="Search" Watermark="Search Term" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="0" Height="40" Width="350" FontSize="14" Padding="5 0 0 0" Background="#FF333333" Foreground="White" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+                    <extToolkit:WatermarkTextBox x:Name="SearchTextBox" Watermark="Search Term" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="0" Height="40" Width="350" FontSize="14" Padding="5 0 0 0" Background="#FF333333" Foreground="White" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
                     <Button Background="#FF1EB08B" Content="Search" Foreground="White" HorizontalAlignment="Right" Height="40" Width="125" Click="ButtonSearch_Click"></Button>
                 </Grid>
                 <RichTextBox  x:Name="RegistryExportTextBox" Height="300" Margin="0 10 0 0" Background="#FF333333" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
