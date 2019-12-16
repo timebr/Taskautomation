@@ -18,7 +18,7 @@
         <Grid Margin="50 110 50 50" Height="300">
             <StackPanel HorizontalAlignment="Left" Width="300">
                 <ComboBox VerticalAlignment="Top" Background="#FF333333" Height="40" Foreground="White"/>
-                <TextBox Margin="0 20 0 0" Height="250" Background="#FF333333" Foreground="White"/>
+                <TextBox Margin="0 20 0 0" Height="250" Background="#FF333333" AllowDrop="True" Drop="TextBox_Drop"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Width="100">
                 <Button VerticalAlignment="Bottom" Height="30" Background="#FF1EB08B" Foreground="White" Margin="0 220 0 0">

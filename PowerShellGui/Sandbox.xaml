@@ -7,6 +7,8 @@
              xmlns:local="clr-namespace:PowerShellGui"
              mc:Ignorable="d"
              d:DesignHeight="300" Width="300">
-    <Grid Background="White"/>
+    <Grid Background="White">
+        
+    </Grid>
 
 </UserControl>

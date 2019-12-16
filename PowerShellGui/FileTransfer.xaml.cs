@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,9 +22,16 @@ namespace PowerShellGui
     /// </summary>
     public partial class FileTransfer : UserControl
     {
+        private object fileList;
+
         public FileTransfer()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_Drop(object sender, DragEventArgs e)
+        {
+
         }
     }
 }
