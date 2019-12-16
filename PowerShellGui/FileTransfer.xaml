@@ -4,19 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PowerShellGui"
+        xmlns:extToolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Height="auto" Width="auto">
     <Grid Background="#FF1E1E1E">
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="auto" Margin="50 50 50 0">
-            <TextBox Text="Source PC" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" Foreground="White" FontFamily="Segoe UI" Width="300" Height="30" Background="#FF333333" TextAlignment="Left" Padding="5 0 0 0" VerticalContentAlignment="Center"/>
-            <Button x:Name="SwitchComputerButton" Margin="350 0 350 0" Height="30" Background="#FF1EB08B" BorderBrush="{x:Null}">
+            <extToolkit:WatermarkTextBox x:Name="TargetPC" Watermark="Target PC" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="0" Height="40" Width="300" FontSize="14" Padding="5 0 0 0" Background="#FF333333" Foreground="White" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+            <Button x:Name="SwitchComputerButton" Margin="350 0 350 0" Height="40" Background="#FF1EB08B" BorderBrush="{x:Null}">
                 <materialDesign:PackIcon Foreground="White" Kind="ArrowLeft" Width="20" Height="20"/>
-            </Button> 
-            <TextBox Text="Destination PC" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" Foreground="White" FontFamily="Segoe UI" Width="300" Height="30" Background="#FF333333" Margin="500 0 0 0" VerticalContentAlignment="Center" Padding="5 0 0 0" />
+            </Button>
+            <extToolkit:WatermarkTextBox x:Name="DestinationPC" Watermark="Destination PC" VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="0" Height="40" Width="300" FontSize="14" Padding="5 0 0 0" Background="#FF333333" Foreground="White" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
         </Grid>
         <Grid Margin="50 110 50 50" Height="300">
             <StackPanel HorizontalAlignment="Left" Width="300">
-                <ComboBox VerticalAlignment="Top" Background="#FF333333" Height="30" Foreground="White"/>
+                <ComboBox VerticalAlignment="Top" Background="#FF333333" Height="40" Foreground="White"/>
                 <TextBox Margin="0 20 0 0" Height="250" Background="#FF333333" Foreground="White"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Width="100">
@@ -26,7 +27,7 @@
                 <Button VerticalAlignment="Bottom" Height="30" Background="#FF1EB08B" Foreground="White" Margin="0 20 0 0" Content="Clear all"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Width="300">
-                <ComboBox VerticalAlignment="Top" Background="#FF333333" Height="30"/>
+                <ComboBox VerticalAlignment="Top" Background="#FF333333" Height="40"/>
                 <TextBox Margin="0 20 0 0" Height="250" Background="#FF333333"/>
             </StackPanel>
         </Grid>
