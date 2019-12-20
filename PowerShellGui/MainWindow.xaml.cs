@@ -20,11 +20,17 @@ namespace PowerShellGui
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow AppWindow;
         public MainWindow()
         {
             InitializeComponent();
+            AppWindow = this;
         }
 
+        public void changeProgressBar(int value)
+        {
+            ProgressBar.Value = value;
+        }
         private void ButtonPopupExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();

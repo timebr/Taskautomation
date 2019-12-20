@@ -38,7 +38,7 @@
             <TextBox x:Name="ComputerName" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="450" FontSize="14" Padding="5 0 0 0" Background="#FF333333" Foreground="White" TextWrapping="Wrap" VerticalContentAlignment="Center" AcceptsReturn="True"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Right" Width="250">
-            <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="#FF1EB08B" Content="Syncronise" Foreground="White" Height="50" Width="200" Margin="25 100 0 0" Click="ButtonSynchronise_Click"></Button>
+            <Button VerticalAlignment="Top" HorizontalAlignment="Left" Background="#FF1EB08B" Content="Syncronise" Foreground="White" Height="50" Width="200" Margin="25 105 0 0" Click="ButtonSynchronise_Click"></Button>
         </StackPanel>
         <Grid Margin="50 150 0 0" Height="300">
             <DataGrid x:Name="ComputerView" Width="450" HorizontalAlignment="Left" AutoGenerateColumns="False" Margin="0 30 0 50" Background="#FF333333" Foreground="White">

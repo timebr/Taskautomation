@@ -38,9 +38,10 @@
             </materialDesign:PopupBox>
         </Grid>
 
-        <Grid Margin="60 55 0 0">
+        <StackPanel Margin="60 50 0 0">
+            <ProgressBar x:Name="ProgressBar" Height="5" Foreground="#FF1EB08B" BorderThickness="0" x:FieldModifier="public"/>
             <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Grid>
+        </StackPanel>
 
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF252526">
             <StackPanel>
