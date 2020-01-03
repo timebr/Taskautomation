@@ -20,11 +20,17 @@ namespace PowerShellGui
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow AppWindow;
         public MainWindow()
         {
             InitializeComponent();
+            AppWindow = this;
         }
 
+        public void changeProgressBar(int value)
+        {
+            ProgressBar.Value = value;
+        }
         private void ButtonPopupExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -56,6 +62,22 @@ namespace PowerShellGui
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new SynchronisePolicies());
                     break;
+
+                case 2:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new RegistryExport());
+                    break;
+
+                case 3:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new FileTransfer());
+                    break;
+
+                case 4:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new Sandbox());
+                    break;
+
                 default:
                     break;
             }

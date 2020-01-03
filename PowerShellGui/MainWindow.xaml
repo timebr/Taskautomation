@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PowerShellGui"
-        mc:Ignorable="d" Height="600" Width="1080" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Foreground="White" ResizeMode="NoResize" WindowStyle="None">
+        mc:Ignorable="d" Height="600" Width="1080" WindowStartupLocation="CenterScreen" Foreground="White" WindowStyle="None" ResizeMode="NoResize">
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -38,9 +38,10 @@
             </materialDesign:PopupBox>
         </Grid>
 
-        <Grid Margin="60 55 0 0">
+        <StackPanel Margin="60 50 0 0">
+            <ProgressBar x:Name="ProgressBar" Height="5" Foreground="#FF1EB08B" BorderThickness="0" x:FieldModifier="public"/>
             <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Grid>
+        </StackPanel>
 
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF252526">
             <StackPanel>
@@ -75,6 +76,12 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Folder" VerticalAlignment="Center" Width="25" Height="25" Margin="10"/>
                             <TextBlock Text="File Transfer" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60" Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Box" VerticalAlignment="Center" Width="25" Height="25" Margin="10"/>
+                            <TextBlock Text="Sandbox" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
