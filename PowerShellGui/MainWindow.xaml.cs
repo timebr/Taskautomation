@@ -31,6 +31,17 @@ namespace PowerShellGui
         {
             ProgressBar.Value = value;
         }
+        public void changeLoadingBar(int width1, int width2, int margin1, int margin2)
+        {
+            LoadingBar1.Width = width1;
+            LoadingBar2.Width = width2;
+            LoadingBar1.Margin = new Thickness(margin1, 0, 0, 0);
+            LoadingBar2.Margin = new Thickness(margin2, 0, 0, 0);
+        }
+        public void changeLoadingBarMargin(int value1, int value2)
+        {
+            
+        }
         private void ButtonPopupExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -75,7 +86,7 @@ namespace PowerShellGui
 
                 case 4:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Sandbox());
+                    GridPrincipal.Children.Add(new SubControls.ComputerDashboard());
                     break;
 
                 default:

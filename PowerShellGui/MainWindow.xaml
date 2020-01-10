@@ -39,7 +39,26 @@
         </Grid>
 
         <StackPanel Margin="60 50 0 0">
-            <ProgressBar x:Name="ProgressBar" Height="5" Foreground="#FF1EB08B" BorderThickness="0" x:FieldModifier="public"/>
+            <Grid>
+                <ProgressBar x:Name="ProgressBar" Height="5" Foreground="#FF1EB08B" BorderThickness="0" x:FieldModifier="public"/>
+                <Rectangle x:Name="LoadingBar1" Height="5" Width="0" HorizontalAlignment="Left">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                            <GradientStop Color="#FF79DEC4" Offset="0" />
+                            <GradientStop Color="#FF16473B" Offset="1" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle x:Name="LoadingBar2" Height="5" Width="0" HorizontalAlignment="Left">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                            <GradientStop Color="#FF16473B" Offset="0" />
+                            <GradientStop Color="#FF79DEC4" Offset="1" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Grid>
+            
             <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
 
